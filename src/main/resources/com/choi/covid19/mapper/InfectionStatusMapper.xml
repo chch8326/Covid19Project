@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.choi.covid19.mapper.InfectionStatusMapper">
+	<resultMap id="infecStatusMap" type="com.choi.covid19.model.InfectionStatusVO">
+		<id property="seq" column="seq" />
+		<result property="stateDt" column="state_dt" />
+		<result property="decideCnt" column="decide_cnt" />
+		<result property="deathCnt" column="death_cnt" />
+		<result property="totalDecideCnt" column="total_decide_cnt" />
+		<result property="totalDeathCnt" column="total_death_cnt" />
+		<result property="accDefRate" column="acc_def_rate" />
+		<result property="careCnt" column="care_cnt" />
+		<result property="clearCnt" column="clear_cnt" />
+		<result property="examCnt" column="exam_cnt" />
+		<result property="accExamCnt" column="acc_exam_cnt" />
+		<result property="accExamCompCnt" column="acc_exam_comp_cnt" />
+		<result property="resutlNegCnt" column="resutl_neg_cnt" />
+		<result property="createDt" column="create_dt" />
+	</resultMap>
+	
+	<insert id="save">
+		INSERT INTO 
+			tbl_covid19_infection_status
+		VALUES(
+			#{seq}
+			, #{stateDt}
+			, #{decideCnt}
+			, #{deathCnt}
+			, #{totalDecideCnt}
+			, #{totalDeathCnt}
+			, #{accDefRate}
+			, #{careCnt}
+			, #{clearCnt}
+			, #{examCnt}
+			, #{accExamCnt}
+			, #{accExamCompCnt}
+			, #{resutlNegCnt}
+			, #{createDt}
+		)
+	</insert>
+	
+	<delete id="remove">
+		DELETE FROM tbl_covid19_infection_status
+	</delete>
+	
+	<select id="view" resultType="com.choi.covid19.model.InfectionStatusVO" resultMap="infecStatusMap">
+		SELECT *
+		FROM tbl_covid19_infection_status
+	</select>
+</mapper>

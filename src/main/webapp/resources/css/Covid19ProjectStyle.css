@@ -1,0 +1,45 @@
+#menu {
+	background:#666666;
+}
+
+#menu ul {
+	width:750px;
+	margin:0 auto;
+	overflow:hidden;
+	list-style:none;
+}
+
+#menu ul li {
+	float:left;
+	width:30%;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	background:#666666;
+}
+
+#menu ul li a {
+	color:white;
+	display:block;
+	font-size:20px;
+	text-decoration:none;
+}
+
+#menu ul li a:hover {
+	background:#444444;
+}
+
+h1 {
+	text-align:center;
+}
+
+.infecStatusTbl {
+	width:100%;
+	border:1px solid black;
+	border-collapse:collapse;
+}
+
+th, td {
+	padding:10px;
+	text-align:center;
+}

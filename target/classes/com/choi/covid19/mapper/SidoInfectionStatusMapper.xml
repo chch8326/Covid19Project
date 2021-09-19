@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.choi.covid19.mapper.SidoInfectionStatusMapper">
+	<resultMap id="sidoInfecStatus" type="com.choi.covid19.model.SidoInfectionStatusVO">
+		<id property="seq" column="seq" />
+		<result property="stdDay" column="std_day" />
+		<result property="gubun" column="gubun" />
+		<result property="defCnt" column="def_cnt" />
+		<result property="deathCnt" column="death_cnt" />
+		<result property="totalDefCnt" column="total_def_cnt" />
+		<result property="totalDeathCnt" column="total_death_cnt" />
+		<result property="isolIngCnt" column="isol_ing_cnt" />
+		<result property="isolClearCnt" column="isol_clear_cnt" />
+		<result property="localOccCnt" column="local_occ_cnt" />
+		<result property="overFlowCnt" column="over_flow_cnt" />
+		<result property="createDt" column="create_dt" />
+	</resultMap>
+	
+	<insert id="save" parameterType="java.util.List">
+		INSERT INTO 
+			tbl_covid19_sido_infection_status
+		VALUES
+		<foreach collection="list" item="item" separator=", ">
+		(
+			#{item.seq}
+			, #{item.stdDay}
+			, #{item.gubun}
+			, #{item.defCnt}
+			, #{item.deathCnt}
+			, #{item.totalDefCnt}
+			, #{item.totalDeathCnt}
+			, #{item.isolIngCnt}
+			, #{item.isolClearCnt}
+			, #{item.localOccCnt}
+			, #{item.overFlowCnt}
+			, #{item.createDt}
+		)		
+		</foreach>
+	</insert>
+	
+	<delete id="remove">
+		DELETE FROM tbl_covid19_sido_infection_status
+	</delete>
+	
+	<select id="view" resultType="com.choi.covid19.model.SidoInfectionStatusVO" resultMap="sidoInfecStatus">
+		SELECT *
+		FROM tbl_covid19_sido_infection_status
+		ORDER BY seq desc
+	</select>
+</mapper>
