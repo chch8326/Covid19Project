@@ -14,7 +14,7 @@
 
 **2. 시 · 도별 코로나 감염 현황**
   * [xml을 json으로 변환(XmlToJson.java)](https://github.com/chch8326/Covid19Project/blob/main/Covid19Project/src/main/java/com/choi/covid19/util/XmlToJson.java?ts=4)
-  * [json 파싱 및 스케쥴링으로 정해진 시간에 현황 업데이트(InfectionStatusUpdateTask.java)](https://github.com/chch8326/Covid19Project/blob/main/Covid19Project/src/main/java/com/choi/covid19/task/InfectionStatusUpdateTask.java?ts=4)
+  * [json 파싱 및 스케쥴링으로 정해진 시간에 데이터 업데이트(InfectionStatusUpdateTask.java)](https://github.com/chch8326/Covid19Project/blob/main/Covid19Project/src/main/java/com/choi/covid19/task/InfectionStatusUpdateTask.java?ts=4)
 <img width="700" height="450" src="https://user-images.githubusercontent.com/42902371/132116333-5c0f5ef9-722a-4631-a15d-15c9f483ee3f.PNG">   
     
 **3. 선별 진료소 위치 및 정보 제공**
